@@ -1,0 +1,13 @@
+Calculate lFileExt as mid(pPath,rpos('.',pPath))
+Calculate lPathWOExt as left(pPath,rpos('.',pPath)-1)
+
+Calculate lCounter as 1
+Calculate lNextPath as con(lPathWOExt,'-',lCounter,lFileExt)
+While FileOps.$doesfileexist(lNextPath)
+	Calculate lCounter as lCounter+1
+	Calculate lNextPath as con(lPathWOExt,'-',lCounter,lFileExt)
+	If lCounter>100
+		Breakpoint
+	End If
+End While
+Quit method lNextPath

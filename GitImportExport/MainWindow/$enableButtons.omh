@@ -1,0 +1,5 @@
+If isclear(iPathMaster)
+	Calculate pEnable as kFalse
+End If
+Do $cinst.$objs.open_libs_btn.$enabled.$assign(pEnable)
+Do $cinst.$enableImpExpButtons(pEnable)

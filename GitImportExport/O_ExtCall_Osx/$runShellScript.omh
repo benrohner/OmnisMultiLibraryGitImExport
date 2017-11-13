@@ -1,0 +1,7 @@
+Do method escapeString (pShellScript) Returns pShellScript
+Calculate lAppleScript as con('do shell script "',pShellScript,'"')
+Do $runapplescript(lAppleScript,pResult,pError)
+If not(isclear(lError))
+	Quit method kFalse
+End If
+Quit method kTrue

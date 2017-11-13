@@ -1,0 +1,52 @@
+Do $cinst.$backupPlugins(iPath2Plugins)
+
+Do $cinst.$getRecursivFileList(iPath2Plugins,3) Returns lDirList
+Do lDirList.$search(pos('.git',$ref.name)=len($ref.name)-3&pos('.git',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)
+Do lDirList.$remove(kListKeepSelected)
+
+Do $cinst.$defineErrorMaster(lMasterErrors)
+Do $cinst.$defineErrorMaster(lMasterWarnings)
+
+For l1 from 1 to lDirList.$linecount step 1
+	Calculate lImportLibName as left(lDirList('name',l1),rpos('.git',lDirList('name',l1))-1)
+	If lImportLibName='GitImportExport'
+		Jump to start of loop
+	End If
+	
+	Calculate lTmpLibPath as replace(lDirList('fullname',l1),'.git','_new.lbs')
+	Calculate lLibPath as replace(lDirList('fullname',l1),'.git','.lbs')
+	
+	Do FileOps.$deletefile(lTmpLibPath)
+	Do $root.$importjson(lDirList('fullname',l1),lTmpLibPath,lErrors,lWarnings) Returns lStatus
+	If lErrors.$linecount<1&lStatus
+		If FileOps.$doesfileexist(lTmpLibPath)
+			Close library {[lImportLibName]}
+			Do FileOps.$deletefile(lLibPath) Returns lFileOpsError
+			If lFileOpsError=kFileOpsOK
+				Do FileOps.$movefile(lTmpLibPath,lLibPath) Returns lFileOpsError
+				If lFileOpsError=kFileOpsOK&FileOps.$doesfileexist(lLibPath)
+					Open library (Do not close others,Enable conversion by runtime,Do not open startup task) {[lLibPath]}
+				Else
+					;  Breakpoint {Importierte Library kann nich geöffnet werden}
+					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Fortfahren?}
+					If flag false
+						Do lMasterErrors.$merge(lErrors)
+						Do lMasterWarnings.$merge(lWarnings)
+						Break to end of loop
+					End If
+				End If
+			End If
+		End If
+	Else
+		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Fehlerlisteansehen. Fortfahren?}
+		If flag false
+			Do lMasterErrors.$merge(lErrors)
+			Do lMasterWarnings.$merge(lWarnings)
+			Break to end of loop
+		End If
+	End If
+	Do lMasterErrors.$merge(lErrors)
+	Do lMasterWarnings.$merge(lWarnings)
+End For
+
+Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)

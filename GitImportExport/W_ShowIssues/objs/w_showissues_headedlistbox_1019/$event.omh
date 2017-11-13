@@ -1,0 +1,14 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+On evDoubleClick     ;; Event Parameters - pRow ( Itemreference )
+	If iListAllIssues.$line=0
+		OK message Kein Element ausgewählt {Bitte Zeile zum öffnen im Editor selektieren}
+		Quit method
+	End If
+	
+	Calculate lPath as iListAllIssues(iPathname.$name,$ref.$line)
+	If isclear(lPath)
+		OK message Fehlende Pfad Angabe {Bitte Zeile zum öffnen im Editor selektieren}
+		Quit method
+	End If
+	
+	Do  Returns $cinst.$showClassInEditor(lPath)

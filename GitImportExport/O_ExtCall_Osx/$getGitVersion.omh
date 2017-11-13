@@ -1,0 +1,7 @@
+Calculate lScript as con('cd "',pPath,'/Contents/MacOS/firstruninstall/siMedCore/"; git rev-parse HEAD')
+
+If not($cinst.$runShellScript(lScript,lGitHash))
+	Breakpoint
+	Quit method ''
+End If
+Quit method lGitHash
