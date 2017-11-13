@@ -104,7 +104,7 @@
 				"sublen": 0
 			},
 			{
-				"name": "lPath2SiMedPlugins",
+				"name": "lPath2siMedCore",
 				"order": 21,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",

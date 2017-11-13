@@ -1,7 +1,7 @@
 Calculate lUserHome as getenv('HOME')
-Calculate lCommitHash as iUtils.$getGitVersion()
+Do iUtils.$getGitVersion(pPath) Returns lCommitHash
 
-Calculate lPathToArchive as con(lUserHome,'/Dev/siMed/siMedPlugins_',lCommitHash,'.zip')
+Calculate lPathToArchive as con(lUserHome,'/Dev/siMed/siMedCore_',lCommitHash,'.zip')
 If FileOps.$doesfileexist(lPathToArchive)
 	No/Yes message Sicherungskopie existiert bereits {Es existiert bereits eine Sicherungskopie mit diesem GIT-Commit Hash. Soll diese überschrieben werden? Das vorherige Backup geht damit verloren. Drücke nein um eine weitere Sicherung zu erstellen.}
 	If flag true

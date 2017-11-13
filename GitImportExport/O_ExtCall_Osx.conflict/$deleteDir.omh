@@ -1,0 +1,2 @@
+Calculate lScript as con('rm -r "',pPath,'"')
+Quit method $cinst.$runShellScript(lScript)

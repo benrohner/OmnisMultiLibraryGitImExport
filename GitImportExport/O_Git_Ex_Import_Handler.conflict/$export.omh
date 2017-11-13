@@ -1,0 +1,32 @@
+Do lLibs.$define(lLibName,lLibPath)
+Do lLibs.$merge($libs.$makelist($ref.$name,$ref.$pathname))
+
+Do lLibs.$search(pos(con(',',upp($ref.[lLibName.$name]),','),con(',',upp(C_EXCLUDE_LIBS),','))>0,kTrue,kFalse,kTrue,kTrue)
+Do lLibs.$remove(kListDeleteSelected)
+
+Do $cinst.$defineErrorMaster(lMasterErrors)
+Do $cinst.$defineErrorMaster(lMasterWarnings)
+
+For l1 from 1 to lLibs.$linecount step 1
+	Calculate lLibName as lLibs(lLibName.$name,l1)
+	Calculate lLibPath as lLibs(lLibPath.$name,l1)
+	Calculate lGitPath as con(mid(lLibPath,1,rpos('.',lLibPath)-1),'.git')
+	;  Calculate lGitPath as con("/Users/benjaminrohner/Documents/src/siMedExport/",lLibName,"/")
+	Do FileOps.$doesfileexist(lGitPath) Returns lStatus
+	If not(lStatus)
+		Do FileOps.$createdir(lGitPath) Returns lStatus
+	End If
+	Do $root.$exportjson($libs.[lLibName],lGitPath,lErrors,lWarnings) Returns lStatus
+	If not(lStatus)
+		Calculate lFailedLibs as con(lFailedLibs,lLibName,',')
+	End If
+	
+	Do lMasterErrors.$merge($cinst.$mergeExporetIssues(lErrors))
+	Do lMasterWarnings.$merge($cinst.$mergeExporetIssues(lWarnings))
+End For
+
+Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
+
+If not(isclear(lFailedLibs))
+	OK message Some Libs faild by export (Icon,Sound bell) {[lFailedLibs]}
+End If

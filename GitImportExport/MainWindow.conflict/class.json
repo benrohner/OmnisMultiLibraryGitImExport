@@ -1,58 +1,23 @@
 {
 	"classtype": "kWindow",
-	"internalversion": 22,
+	"internalversion": 28,
 	"designtaskname": "Startup_Task",
-	"nextident": 1024,
+	"nextident": 1027,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
 		{
-			"name": "iErrorcode",
-			"order": 6,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iErrorText",
+			"name": "iGitHandler",
 			"order": 5,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
+			"type": "kObject",
+			"subtype": "O_Git_Ex_Import_Handler",
+			"sublen": 0
 		},
 		{
-			"name": "iLineNo",
-			"order": 7,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iListAllIssues",
+			"name": "iPathMaster",
 			"order": 3,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iListErrors",
-			"order": 2,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iListWarnings",
-			"order": 1,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iPathname",
-			"order": 4,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
@@ -73,7 +38,7 @@
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2017-11-06 14:42:42",
+		"createdate": "2017-11-03 10:17:20",
 		"desc": "",
 		"dockingedge": "kBorderChisel",
 		"dropmode": "kAcceptNone",
@@ -87,7 +52,7 @@
 		"growbox": true,
 		"hasmenus": false,
 		"hasstatusbar": false,
-		"height": 636,
+		"height": 98,
 		"helpbutton": false,
 		"helpfile": 0,
 		"horzgrid": 8,
@@ -96,12 +61,12 @@
 		"issubwindow": false,
 		"issupercomponent": false,
 		"keepclicks": true,
-		"left": 280,
+		"left": 536,
 		"menuedge": "kBorderChisel",
 		"menunames": "",
 		"minimizebox": false,
 		"minimizeiconid": 2006,
-		"moddate": "2017-11-09 17:00:17",
+		"moddate": "2017-11-13 09:46:30",
 		"modelessdata": true,
 		"showascheckedout": false,
 		"showcommands": false,
@@ -116,13 +81,13 @@
 		"toolbarnames": "",
 		"toolbaroptions": "kTBOptionNone",
 		"toolbarpos": "kDockingAreaNone",
-		"top": 94,
+		"top": 310,
 		"userinfo": "",
 		"usesheets": false,
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false,
-		"width": 1009,
+		"width": 731,
 		"zoombox": false
 	},
 	"statusbar": {

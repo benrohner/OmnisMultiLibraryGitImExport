@@ -1,0 +1,16 @@
+Calculate lList as FileOps.$filelist(kFileOpsIncludeDirectories+kFileOpsIncludeFiles,pDirPath,kFileOpsInfoName+kFileOpsInfoFullName)
+Calculate lList3 as lList
+
+If pDirLevel>pMaxDirLevel
+	Quit method lList3
+End If
+
+For n from 1 to lList.$linecount step 1     ;; Subdirectories auflisten
+	If pos('.git',lList(1,n))=len(lList(1,n))-3
+		Jump to start of loop
+	End If
+	Do $cinst.$getRecursivFileList(lList(2,n),pMaxDirLevel,pDirLevel+1) Returns lList2
+	Do lList3.$merge(lList2)
+End For
+
+Quit method lList3
