@@ -41,7 +41,7 @@ For l1 from 1 to lDirList.$linecount step 1
 			End If
 		End If
 	Else
-		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Fehlerlisteansehen. Fortfahren?}
+		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libaries fortfahren?}
 		If flag false
 			Do lMasterErrors.$merge(lErrors)
 			Do lMasterWarnings.$merge(lWarnings)
