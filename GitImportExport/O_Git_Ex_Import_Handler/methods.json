@@ -7,7 +7,13 @@
 
 		],
 		"lvardefs": [
-
+			{
+				"name": "lTest",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
 		]
 	},
 	{
@@ -19,7 +25,8 @@
 		],
 		"lvardefs": [
 
-		]
+		],
+		"empty": true
 	},
 	{
 		"name": "$init",
