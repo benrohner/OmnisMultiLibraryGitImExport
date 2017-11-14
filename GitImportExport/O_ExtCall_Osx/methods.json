@@ -37,6 +37,13 @@
 		],
 		"lvardefs": [
 			{
+				"name": "lError",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
 				"name": "lGitHash",
 				"order": 2,
 				"type": "kCharacter",

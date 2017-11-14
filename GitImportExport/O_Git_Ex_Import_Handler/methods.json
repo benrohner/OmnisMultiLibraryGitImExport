@@ -528,7 +528,7 @@
 		]
 	},
 	{
-		"name": "$backupPlugins",
+		"name": "$checkBackupPlugins",
 		"ident": 13,
 		"order": 14,
 		"pvardefs": [
@@ -543,15 +543,68 @@
 		],
 		"lvardefs": [
 			{
+				"name": "lDoBackup",
+				"order": 9,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "lPathToDev",
+				"order": 8,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lStatus",
+				"order": 7,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "lUserHome",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$doBackupPlugins",
+		"ident": 15,
+		"order": 15,
+		"pvardefs": [
+			{
+				"name": "pPathToDev",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pPath",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
 				"name": "lCommitHash",
-				"order": 5,
+				"order": 3,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
 			},
 			{
 				"name": "lFileInfo",
-				"order": 6,
+				"order": 4,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
@@ -572,14 +625,31 @@
 			},
 			{
 				"name": "lStatus",
-				"order": 7,
+				"order": 5,
 				"type": "kBoolean",
 				"subtype": 0,
 				"sublen": 0
-			},
+			}
+		]
+	},
+	{
+		"name": "$getLastCommitHashFromGit",
+		"ident": 14,
+		"order": 16,
+		"pvardefs": [
 			{
-				"name": "lUserHome",
-				"order": 4,
+				"name": "pPath",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lCommitHash",
+				"order": 1,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000

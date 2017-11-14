@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	Do iListAllIssues.$clear()
-	Do iListAllIssues.$merge(iListErrors)
-	Do iListAllIssues.$merge(iListWarnings)
-	Do $cinst.$redraw()

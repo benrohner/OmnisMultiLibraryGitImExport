@@ -1,4 +1,7 @@
-Do $cinst.$backupPlugins(iPath2Plugins)
+Yes/No message Backup der Libaries erstellen {Soll ein Backup des Verzeichnisses [iPath2Plugins] erstellt werden? Bei einem fehlerhaften Import kann es sonst zum Verlust deiner Änderungen kommen.}
+If flag true
+	Do $cinst.$checkBackupPlugins(iPath2Plugins)
+End If
 
 Do $cinst.$getRecursivFileList(iPath2Plugins,3) Returns lDirList
 Do lDirList.$search(pos('.git',$ref.name)=len($ref.name)-3&pos('.git',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)

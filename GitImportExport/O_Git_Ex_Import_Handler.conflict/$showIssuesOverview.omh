@@ -1,7 +1,0 @@
-If pMasterErrors.$linecount>0|pMasterWarnings.$linecount>0     ;; Wenn keine Issues vorhanden sind muss nix angezeigt werden
-	Test for window open {W_ShowIssues}
-	If flag true
-		Close window instance W_ShowIssues
-	End If
-	Open window instance W_ShowIssues (pMasterErrors,pMasterWarnings)
-End If

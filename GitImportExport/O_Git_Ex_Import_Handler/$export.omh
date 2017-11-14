@@ -11,7 +11,6 @@ For l1 from 1 to lLibs.$linecount step 1
 	Calculate lLibName as lLibs(lLibName.$name,l1)
 	Calculate lLibPath as lLibs(lLibPath.$name,l1)
 	Calculate lGitPath as con(mid(lLibPath,1,rpos('.',lLibPath)-1),'.git')
-	;  Calculate lGitPath as con("/Users/benjaminrohner/Documents/src/siMedExport/",lLibName,"/")
 	Do FileOps.$doesfileexist(lGitPath) Returns lStatus
 	If not(lStatus)
 		Do FileOps.$createdir(lGitPath) Returns lStatus
@@ -25,8 +24,8 @@ For l1 from 1 to lLibs.$linecount step 1
 	Do lMasterWarnings.$merge($cinst.$mergeExporetIssues(lWarnings))
 End For
 
-Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
-
 If not(isclear(lFailedLibs))
-	OK message Some Libs faild by export (Icon,Sound bell) {[lFailedLibs]}
+	OK message Fehler beim Exportieren (Icon,Sound bell) {Folgende Libraries konnten nixcht exportiert werden: [lFailedLibs]}
 End If
+
+Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)

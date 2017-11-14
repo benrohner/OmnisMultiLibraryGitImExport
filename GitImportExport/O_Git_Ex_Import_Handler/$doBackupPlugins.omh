@@ -1,7 +1,5 @@
-Calculate lUserHome as getenv('HOME')
-Do iUtils.$getGitVersion(pPath) Returns lCommitHash
-
-Calculate lPathToArchive as con(lUserHome,'/Dev/siMed/siMedCore_',lCommitHash,'.zip')
+Calculate lCommitHash as $cinst.$getLastCommitHashFromGit(pPath)
+Calculate lPathToArchive as con(pPathToDev,'siMedPlugins_',lCommitHash,'.zip')
 If FileOps.$doesfileexist(lPathToArchive)
 	No/Yes message Sicherungskopie existiert bereits {Es existiert bereits eine Sicherungskopie mit diesem GIT-Commit Hash. Soll diese überschrieben werden? Das vorherige Backup geht damit verloren. Drücke nein um eine weitere Sicherung zu erstellen.}
 	If flag true
@@ -14,13 +12,14 @@ If FileOps.$doesfileexist(lPathToArchive)
 		Do iUtils.$getNextVersionedDir(lPathToArchive) Returns lPathToArchive
 	End If
 End If
+
 Calculate lScript as con('zip -r "',lPathToArchive,'" "',pPath,'"')
 Do iUtils.$runShellScript(lScript)
 If FileOps.$doesfileexist(lPathToArchive)
 	Do FileOps.$getfileinfo(lPathToArchive,kFileOpsInfoSize) Returns lFileInfo
-	If lFileInfo.size>0
-		Quit method kTrue
+	If lFileInfo.size=0
+		Quit method kFalse
 	End If
 End If
-Quit method kFalse
-Open trace log
+
+Quit method kTrue

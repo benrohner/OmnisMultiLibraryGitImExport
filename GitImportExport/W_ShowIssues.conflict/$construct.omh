@@ -1,7 +1,0 @@
-;  Enter your initialization code here
-Calculate iListErrors as pListErrors
-Calculate iListWarnings as pListWarnings
-
-Do iListAllIssues.$define(iPathname,iErrorText,iErrorcode,iLineNo)
-Do iListAllIssues.$merge(iListErrors)
-Do iListAllIssues.$merge(iListWarnings)

@@ -140,17 +140,5 @@
 
 		],
 		"empty": true
-	},
-	{
-		"name": "New Method",
-		"ident": 7,
-		"order": 8,
-		"pvardefs": [
-
-		],
-		"lvardefs": [
-
-		],
-		"empty": true
 	}
 ]

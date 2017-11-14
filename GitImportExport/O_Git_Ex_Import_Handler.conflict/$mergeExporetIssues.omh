@@ -1,5 +1,0 @@
-Do $cinst.$defineErrorMaster(lIssueListConverted)
-For l1 from 1 to pExportIssues.$linecount step 1
-	Do lIssueListConverted.$add(pExportIssues('class',l1).$class().$fullname,pExportIssues('errorcode',l1),pExportIssues('errortext',l1))
-End For
-Quit method lIssueListConverted

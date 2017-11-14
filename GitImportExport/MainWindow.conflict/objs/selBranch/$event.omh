@@ -1,5 +1,0 @@
-On evClick     ;; Event Parameters - pRow( Itemreference )
-	If #COMMAND
-		Calculate lOpenAllDirs as kTrue
-	End If
-	Do $cinst.$selectMaster(lOpenAllDirs)
