@@ -9,12 +9,16 @@ Do $cinst.$defineErrorMaster(lMasterWarnings)
 
 For l1 from 1 to lLibs.$linecount step 1
 	Calculate lLibName as lLibs(lLibName.$name,l1)
+	If lLibName=$clib().$name
+		Jump to start of loop
+	End If
 	Calculate lLibPath as lLibs(lLibPath.$name,l1)
 	Calculate lGitPath as con(mid(lLibPath,1,rpos('.',lLibPath)-1),'.git')
 	Do FileOps.$doesfileexist(lGitPath) Returns lStatus
-	If not(lStatus)
-		Do FileOps.$createdir(lGitPath) Returns lStatus
+	If lStatus
+		Do iUtils.$deleteDir(lGitPath)
 	End If
+	Do FileOps.$createdir(lGitPath) Returns lStatus
 	Do $root.$exportjson($libs.[lLibName],lGitPath,lErrors,lWarnings) Returns lStatus
 	If not(lStatus)
 		Calculate lFailedLibs as con(lFailedLibs,lLibName,',')
