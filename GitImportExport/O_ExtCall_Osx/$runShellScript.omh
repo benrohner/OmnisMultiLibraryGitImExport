@@ -1,0 +1,15 @@
+Do method escapeString (pShellScript) Returns pShellScript
+Calculate lAppleScript as ''
+Calculate lAppleScript as con(lAppleScript,'try',kCr)
+Calculate lAppleScript as con(lAppleScript,'	do shell script "',pShellScript,'"',kCr)
+Calculate lAppleScript as con(lAppleScript,'on error errMsg',kCr)
+Calculate lAppleScript as con(lAppleScript,'	(log) & errMsg',kCr)
+Calculate lAppleScript as con(lAppleScript,'end try',kCr)
+Do $runapplescript(lAppleScript,lResult,lError)
+If not(isclear(lError))
+	Calculate pError as lError
+	Quit method kFalse
+End If
+
+Calculate pResult as lResult
+Quit method kTrue

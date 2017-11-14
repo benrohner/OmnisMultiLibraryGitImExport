@@ -1,0 +1,22 @@
+Calculate lUserHome as getenv('HOME')
+Calculate lPathToDev as con(lUserHome,'/Dev/siMed/')
+
+Calculate lDoBackup as kTrue
+If not(FileOps.$doesfileexist(lPathToDev))
+	Do iUtils.$createDir(lPathToDev) Returns lStatus
+	If not(lStatus)
+		Calculate lDoBackup as kFalse
+		OK message simed Backup Verzeichnis existiert nicht {Das siMed Backup Verzeichnis [pPath] existiert nicht und konnte auch nicht erstellt werden. Soll ohne Backup von siMedPlugins fortgefahren werden?}
+		If flag false
+			Quit method kFalse
+		End If
+	End If
+End If
+
+If lDoBackup
+	If not($cinst.$doBackupPlugins(lPathToDev,pPath))
+		Quit method kFalse
+	End If
+End If
+
+Quit method kTrue

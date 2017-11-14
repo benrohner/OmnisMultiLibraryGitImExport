@@ -1,0 +1,5 @@
+Do pErrorList.$define()
+Do pErrorList.$cols.$add('class',kCharacter,kSimplechar)
+Do pErrorList.$cols.$add('errorcode',kCharacter,kSimplechar)
+Do pErrorList.$cols.$add('errortext',kCharacter,kSimplechar)
+Do pErrorList.$cols.$add('lineno',kCharacter,kSimplechar)

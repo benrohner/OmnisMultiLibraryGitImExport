@@ -1,0 +1,2 @@
+Calculate lAppleScript as con('do shell script "',pShellScript,'"')
+Do $runapplescript(lAppleScript,lResult,lError)

@@ -1,0 +1,6 @@
+Calculate lCommitHash as iUtils.$getGitVersion(pPath)
+If isclear(lCommitHash)
+	Calculate lCommitHash as 'unkownCommitHash'
+End If
+
+Quit method lCommitHash

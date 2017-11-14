@@ -1,0 +1,9 @@
+Do lTokenizedString.$define(lSubString)
+Do trim(pString,kTrue,kFalse,pDelimiter) Returns lSource     ;; Leading / entfernen damit das zerlegen des Strings nachfolgend funktioniert
+Do strtok(lSource.$name,(sys(9))) Returns lSubString
+While not(isclear(lSubString))
+	Do lTokenizedString.$add(lSubString)
+	Do strtok(lSource.$name,(sys(9))) Returns lSubString
+End While
+
+Quit method lTokenizedString

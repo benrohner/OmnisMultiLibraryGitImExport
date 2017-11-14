@@ -1,0 +1,12 @@
+Calculate lScript as con('cd "',pPath,'"; git rev-parse HEAD')
+
+If not($cinst.$runShellScript(lScript,lGitHash,lError))
+	If pos('Not a git repository',lError)
+		OK message Kein Git Ripository {Das Verzeichnis [pPath] ist kein git Repository. Daher konnte die Head Version nicht ausgelesen werden.}
+	Else
+		Breakpoint {Ein Fehler beim holen der Git Head Version ist aufgetreten. Bitte Fehlerbehandlung erweitern.}
+	End If
+	Quit method ''
+End If
+
+Quit method lGitHash

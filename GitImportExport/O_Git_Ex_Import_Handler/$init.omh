@@ -1,0 +1,7 @@
+Calculate iPathMaster as pPathMaster
+If isclear(iPathMaster)
+	Quit method kFalse
+End If
+Calculate iPath2Plugins as con(pPathMaster,'/Contents/MacOS/firstruninstall/siMedPlugins')
+
+Quit method kTrue

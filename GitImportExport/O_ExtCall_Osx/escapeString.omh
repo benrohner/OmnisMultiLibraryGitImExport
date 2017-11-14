@@ -1,0 +1,6 @@
+;  escapes a String with ' " ' and/or ' \ ' correctly for further use in shell or apple script.
+;  cg: für eine Zeile keine eigene Methode benutzen -> Performancegründe
+;  DO 2012-03-27: Für eine nicht triviale Zeile, die an verschiedenen Orten verwendet wird, immer eigene Methode verwenden -> Designgründe
+;  -> Es funktioniert immer genau gleich und falls sich die Funktionalität als falsch erweisen sollte, muss nur eine einzige Stelle im Code angepasst werden.
+
+Quit method replaceall(replaceall(pString,'\','\\'),'"','\"')     ;; order is important!
