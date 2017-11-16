@@ -1,6 +1,6 @@
 {
 	"classtype": "kWindow",
-	"internalversion": 32,
+	"internalversion": 37,
 	"designtaskname": "Startup_Task",
 	"nextident": 1027,
 	"lastgroupident": 0,
@@ -9,18 +9,18 @@
 	],
 	"ivardefs": [
 		{
-			"name": "iGitHandler",
-			"order": 5,
-			"type": "kObject",
-			"subtype": "O_Git_Ex_Import_Handler",
-			"sublen": 0
-		},
-		{
 			"name": "iPathMaster",
 			"order": 3,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
+		},
+		{
+			"name": "tGitHandler",
+			"order": 5,
+			"type": "kObject",
+			"subtype": "O_Git_Ex_Import_Handler",
+			"sublen": 0
 		}
 	],
 	"properties": {
@@ -66,7 +66,7 @@
 		"menunames": "",
 		"minimizebox": false,
 		"minimizeiconid": 2006,
-		"moddate": "2017-11-13 17:18:32",
+		"moddate": "2017-11-16 12:12:31",
 		"modelessdata": true,
 		"showascheckedout": false,
 		"showcommands": false,

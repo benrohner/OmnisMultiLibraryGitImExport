@@ -73,6 +73,20 @@
 		],
 		"lvardefs": [
 			{
+				"name": "iPrevPathMaster",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lPrevPathMaster",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
 				"name": "lStatus",
 				"order": 1,
 				"type": "kBoolean",

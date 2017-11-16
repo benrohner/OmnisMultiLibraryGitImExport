@@ -1,4 +1,4 @@
 On evClick     ;; Event Parameters - pRow( Itemreference )
 	Do $cinst.$enableButtons(kFalse)
-	Do iGitHandler.$import()
+	Do tGitHandler.$import()
 	Do $cinst.$enableImpExpButtons(kTrue)

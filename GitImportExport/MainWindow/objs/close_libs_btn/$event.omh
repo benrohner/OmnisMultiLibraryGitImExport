@@ -1,5 +1,5 @@
 On evClick     ;; Event Parameters - pRow( Itemreference )
 	Do $cinst.$enableButtons(kFalse)
-	Do iGitHandler.$closeAllLibraries()
+	Do tGitHandler.$closeAllLibraries()
 	Do $cinst.$enableButtons(kTrue)
 	Do $cinst.$enableImpExpButtons(kFalse)

@@ -1,0 +1,5 @@
+If isclear(iPathMaster)
+	Calculate pEnable as kFalse
+End If
+Do $cinst.$objs.m_export_source.$enabled.$assign(pEnable)
+Do $cinst.$objs.m_import_source.$enabled.$assign(pEnable)

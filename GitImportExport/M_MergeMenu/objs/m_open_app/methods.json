@@ -1,0 +1,41 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "kShortint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pRow2",
+				"order": 4,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lPrevPathMaster",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lStatus",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			}
+		]
+	}
+]

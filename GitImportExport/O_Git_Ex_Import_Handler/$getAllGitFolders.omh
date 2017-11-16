@@ -1,0 +1,10 @@
+If isclear(pPath)
+	Quit method lList
+End If
+
+Do $cinst.$getRecursivFileList(pPath) Returns lListMaster
+Do lListMaster.$search(pos('.git',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)
+Do lListMaster.$remove(kListKeepSelected)
+Do lListMaster.$sort($ref.fullname)
+
+Quit method lListMaster

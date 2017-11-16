@@ -1,8 +1,14 @@
 {
 	"classtype": "kTask",
-	"internalversion": 4,
+	"internalversion": 8,
 	"tvardefs": [
-
+		{
+			"name": "tGitHandler",
+			"order": 1,
+			"type": "kObject",
+			"subtype": "O_Git_Ex_Import_Handler",
+			"sublen": 0
+		}
 	],
 	"cvardefs": [
 
@@ -20,7 +26,7 @@
 		"editordata": "",
 		"external": false,
 		"issupercomponent": false,
-		"moddate": "2017-11-03 11:39:00",
+		"moddate": "2017-11-16 14:04:07",
 		"showascheckedout": false,
 		"userinfo": "",
 		"version": ""

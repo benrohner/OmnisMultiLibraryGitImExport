@@ -52,7 +52,7 @@
 		"headerfillcolor": "kColor3DFace",
 		"headerfontsize": 0,
 		"headertextcolor": "kColorDefault",
-		"height": 529,
+		"height": 589,
 		"helpfile": 0,
 		"hidefooter": true,
 		"hideheader": false,
@@ -60,7 +60,7 @@
 		"hiliteonecol": 0,
 		"horzscroll": true,
 		"keyevents": false,
-		"left": 2,
+		"left": 0,
 		"linehtextra": 0,
 		"linestyle": 1,
 		"local": false,
@@ -76,10 +76,10 @@
 		"statusevents": false,
 		"textcolor": "kColorWindowText",
 		"tooltip": "",
-		"top": 2,
+		"top": -1,
 		"userinfo": "",
 		"vertscroll": true,
 		"visible": true,
-		"width": 987
+		"width": 1012
 	}
 }

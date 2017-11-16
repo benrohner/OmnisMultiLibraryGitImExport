@@ -38,7 +38,7 @@
 		"iconid": 0,
 		"inactnorec": false,
 		"keyevents": false,
-		"left": 737,
+		"left": 614,
 		"mouseevents": false,
 		"nodropcursor": 0,
 		"nogray": false,
@@ -52,7 +52,7 @@
 		},
 		"textcolor": "kColorDefault",
 		"tooltip": "",
-		"top": 567,
+		"top": 600,
 		"userinfo": "",
 		"visible": true,
 		"width": 120

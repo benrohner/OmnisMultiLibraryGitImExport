@@ -1,1 +1,16 @@
-Open window instance MainWindow
+Do $root.$prefs.$separators Returns lText
+Calculate lText as '.'',.;'
+Do $root.$prefs.$separators(lText)
+Do $root.$prefs.$alwaysshowmainmenu.$assign(kTrue)
+Do $root.$prefs.$maxcachedclasses.$assign(1000)
+Do $root.$prefs.$helpbaron.$assign(kFalse)
+Do $root.$prefs.$mousewheellines.$assign(8)
+Do $root.$prefs.$showsystemfocus.$assign(kTrue)
+
+Do $root.$modes.$fixedcursor.$assign(kFalse)
+Do $root.$modes.$stacklimit.$assign(400)
+
+Calculate #FD as 'D.M.y'
+Calculate #FDT as 'D.M.y H:N:S'
+Do setws(kMonday)     ;; Woche beginnt mit Montag. Wird für Omnis-Datumsberechnungen mit Wochentagen benötigt.
+Install menu M_MergeMenu

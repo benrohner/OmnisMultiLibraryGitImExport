@@ -7,13 +7,7 @@
 
 		],
 		"lvardefs": [
-			{
-				"name": "lTest",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			}
+
 		]
 	},
 	{
@@ -25,7 +19,8 @@
 		],
 		"lvardefs": [
 
-		]
+		],
+		"empty": true
 	},
 	{
 		"name": "$init",
@@ -50,7 +45,24 @@
 		"ident": 3,
 		"order": 4,
 		"pvardefs": [
-
+			{
+				"name": "pImportCore",
+				"order": 6,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1,
+				"initval": "kFalse"
+			},
+			{
+				"name": "pImportPlugins",
+				"order": 7,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kFalse"
+			}
 		],
 		"lvardefs": [
 			{
@@ -61,8 +73,8 @@
 				"sublen": 0
 			},
 			{
-				"name": "lDirList",
-				"order": 8,
+				"name": "lCoreLibs",
+				"order": 11,
 				"type": "kList",
 				"subtype": "",
 				"sublen": 0
@@ -96,6 +108,13 @@
 				"sublen": 100000000
 			},
 			{
+				"name": "lListMaster",
+				"order": 9,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
 				"name": "lMasterErrors",
 				"order": 2,
 				"type": "kList",
@@ -110,11 +129,11 @@
 				"sublen": 0
 			},
 			{
-				"name": "lPath2SiMedPlugins",
-				"order": 21,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
+				"name": "lPluginsList",
+				"order": 12,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
 			},
 			{
 				"name": "lStatus",
@@ -144,9 +163,33 @@
 		"ident": 0,
 		"order": 5,
 		"pvardefs": [
-
+			{
+				"name": "pExportCore",
+				"order": 12,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1,
+				"initval": "kFalse"
+			},
+			{
+				"name": "pExportPlugins",
+				"order": 13,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kFalse"
+			}
 		],
 		"lvardefs": [
+			{
+				"name": "kfase",
+				"order": 14,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
 			{
 				"name": "l1",
 				"order": 8,
@@ -413,9 +456,47 @@
 		]
 	},
 	{
+		"name": "$getAllGitFolders",
+		"ident": 17,
+		"order": 10,
+		"pvardefs": [
+			{
+				"name": "pPath",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lList",
+				"order": 7,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lListMaster",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lPath",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
 		"name": "$defineErrorMaster",
 		"ident": 8,
-		"order": 10,
+		"order": 11,
 		"pvardefs": [
 			{
 				"name": "pErrorList",
@@ -433,7 +514,7 @@
 	{
 		"name": "$showIssuesOverview",
 		"ident": 9,
-		"order": 11,
+		"order": 12,
 		"pvardefs": [
 			{
 				"name": "pMasterErrors",
@@ -459,7 +540,7 @@
 	{
 		"name": "$tokenizeStringToList",
 		"ident": 11,
-		"order": 12,
+		"order": 13,
 		"pvardefs": [
 			{
 				"name": "pString",
@@ -505,7 +586,7 @@
 	{
 		"name": "$mergeExporetIssues",
 		"ident": 12,
-		"order": 13,
+		"order": 14,
 		"pvardefs": [
 			{
 				"name": "pExportIssues",
@@ -536,7 +617,7 @@
 	{
 		"name": "$checkBackupPlugins",
 		"ident": 13,
-		"order": 14,
+		"order": 15,
 		"pvardefs": [
 			{
 				"name": "pPath",
@@ -581,7 +662,7 @@
 	{
 		"name": "$doBackupPlugins",
 		"ident": 15,
-		"order": 15,
+		"order": 16,
 		"pvardefs": [
 			{
 				"name": "pPathToDev",
@@ -641,7 +722,7 @@
 	{
 		"name": "$getLastCommitHashFromGit",
 		"ident": 14,
-		"order": 16,
+		"order": 17,
 		"pvardefs": [
 			{
 				"name": "pPath",
@@ -660,6 +741,24 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000
 			}
+		]
+	},
+	{
+		"name": "stopApp",
+		"ident": 16,
+		"order": 18,
+		"pvardefs": [
+			{
+				"name": "pTaskName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
 		]
 	}
 ]
