@@ -9,4 +9,6 @@ If not(lStatus)
 End If
 Do method setCurrentAppEntry (pPathToApp)
 
+Do $cinst.$enableMenu(kTrue)
+
 Quit method kTrue
