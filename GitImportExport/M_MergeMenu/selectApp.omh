@@ -1,16 +1,7 @@
-Do FileOps.$selectdirectory(iPathMaster,'siMed APP auswählen (Branch)','',kFileOpsOpenApps) Returns lStatus
+Do FileOps.$selectdirectory(lPathMaster,'siMed APP auswählen (Branch)','',kFileOpsOpenApps) Returns lStatus
 If not(lStatus)
-	OK message Kein gültiges Verzeichnis ausgewählt {Das ausgewählte Verzeichnis [iPathMaster] ist ungültig.}
-	Quit method kFalse
-End If
-If low(right(iPathMaster,4))<>".app"
-	OK message Kein gültiger Master ausgewählt {Das ausgewählte Verzeichnis [iPathMaster] ist kein gültiges Master Verzeichniss.}
-	Quit method kFalse
-End If
-Do tGitHandler.$init(iPathMaster) Returns lStatus
-If not(lStatus)
-	OK message Kein gültiger Master ausgewählt {Das ausgewählte Verzeichnis [iPathMaster] ist kein gültiges Master Verzeichniss.}
+	OK message Kein gültiges Verzeichnis ausgewählt {Das ausgewählte Verzeichnis [lPathMaster] ist ungültig.}
 	Quit method kFalse
 End If
 
-Quit method kTrue
+Quit method $cinst.$setMaster(lPathMaster)

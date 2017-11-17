@@ -19,6 +19,14 @@
 				"subtype": "",
 				"sublen": 0,
 				"param": 2
+			},
+			{
+				"name": "pPath",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3
 			}
 		],
 		"lvardefs": [

@@ -1,6 +1,6 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 104,
+	"internalversion": 107,
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 		{
@@ -44,6 +44,13 @@
 			"sublen": 100000000
 		},
 		{
+			"name": "iRecentApps",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
 			"name": "iUtils",
 			"order": 5,
 			"type": "kObject",
@@ -61,7 +68,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2017-11-16 15:04:00",
+		"moddate": "2017-11-17 08:00:21",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

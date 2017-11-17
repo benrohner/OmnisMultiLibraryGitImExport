@@ -1,5 +1,0 @@
-Do $cinst.$objs.export_btn.$enabled.$assign(pEnable)
-Do $cinst.$objs.import_btn.$enabled.$assign(pEnable)
-;  Do $cinst.$objs.close_libs_btn.$enabled.$assign(pEnable)
-
-Do $cinst.$redraw()

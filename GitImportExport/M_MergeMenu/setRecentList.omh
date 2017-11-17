@@ -1,0 +1,2 @@
+Do $clib.$userinfo.$assign(#NULL) Returns lStatus
+Do $clib.$userinfo.$assign(iRecentApps) Returns lStatus

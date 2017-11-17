@@ -1,18 +1,25 @@
 {
 	"classtype": "kMenu",
-	"internalversion": 43,
+	"internalversion": 69,
 	"designtaskname": "Startup_Task",
-	"nextident": 1012,
+	"nextident": 1013,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
 		{
-			"name": "iPathMaster",
-			"order": 1,
+			"name": "iRecentApp",
+			"order": 3,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
+		},
+		{
+			"name": "iRecentApps",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
 		}
 	],
 	"properties": {
@@ -29,7 +36,7 @@
 		"helptext": "",
 		"inheritedorder": 0,
 		"issupercomponent": false,
-		"moddate": "2017-11-16 14:02:47",
+		"moddate": "2017-11-17 14:36:13",
 		"showascheckedout": false,
 		"title": {
 			"type": 0,

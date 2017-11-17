@@ -1,4 +1,4 @@
-If isclear(iPathMaster)
+If isclear(tGitHandler.$getPathToMaster())
 	Calculate pEnable as kFalse
 End If
 Do $cinst.$objs.m_export_source.$enabled.$assign(pEnable)

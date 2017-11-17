@@ -2,7 +2,10 @@
 	"ident": 1008,
 	"order": 1,
 	"properties": {
-		"cascade": "",
+		"cascade": {
+			"type": 4,
+			"calc": "SM_Recent_Open"
+		},
 		"checked": false,
 		"enabled": true,
 		"fontstyle": "kPlain",

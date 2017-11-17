@@ -1,0 +1,12 @@
+Do method getRecentList
+Do pMenu.$objs.$makelist($ref) Returns lCurrentEntries
+For l1 from 1 to lCurrentEntries.$linecount step 1
+	Do pMenu.$objs.$remove(lCurrentEntries(1,l1))
+End For
+
+For l1 from 1 to iRecentApps.$linecount step 1
+	Do pMenu.$objs.$add(iRecentApps(iRecentApp.$name,l1)) Returns lItemRef
+	Do lItemRef.$methods.$add('$event') Returns lRefToMethod
+	Do lRefToMethod.$methodtext.$assign(con('Do method openRecentApp("',iRecentApps(iRecentApp.$name,l1),'")')) Returns lStatus
+	Do lItemRef.$enabled.$assign(kTrue)
+End For

@@ -8,10 +8,10 @@
 		"actnomethod": true,
 		"align": "kCenterJst",
 		"alpha": 255,
-		"backcolor": "kColorDefault",
+		"backcolor": "RGB(0,187,68)",
 		"backgroundtheme": "kBGThemeParent",
-		"backpattern": 0,
-		"bordercolor": "kColorDefault",
+		"backpattern": 1,
+		"bordercolor": "RGB(170,170,170)",
 		"buttonmode": "kBMuser",
 		"buttonstyle": "kSystemButton",
 		"candropcursor": 0,
@@ -28,7 +28,7 @@
 		"dropmode": "kAcceptNone",
 		"edgefloat": "kEFall",
 		"enabled": true,
-		"fieldstyle": "CtrlPushButton",
+		"fieldstyle": "CtrlTabPane",
 		"font": 4,
 		"fontsize": 9,
 		"fontstyle": "kPlain",
@@ -48,7 +48,7 @@
 		"subwindowstyle": false,
 		"text": {
 			"type": 0,
-			"calc": "Nur Errors"
+			"calc": "Errors (x)"
 		},
 		"textcolor": "kColorDefault",
 		"tooltip": "",

@@ -12,3 +12,6 @@ End If
 If iListWarnings.$linecount=0
 	Do $cinst.$objs.filter_wrn_btn.$enabled.$assign(kFalse)
 End If
+
+Do $cinst.$objs.filter_err_btn.$text.$assign(con('Errors (',iListErrors.$linecount,')'))
+Do $cinst.$objs.filter_wrn_btn.$text.$assign(con('Warnings (',iListWarnings.$linecount,')'))

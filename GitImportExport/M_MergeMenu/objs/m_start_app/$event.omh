@@ -1,10 +1,12 @@
 Do $cinst.$objs.m_import_source.$enabled.$assign(kFalse)
-If isclear(iPathMaster)
+If isclear(tGitHandler.$getPathToMaster())
 	Do method selectApp Returns lStatus
 	If not(lStatus)
 		Quit method
 	End If
 End If
+
+Do method addToRecentApps (tGitHandler.$getPathToMaster())
 
 Do tGitHandler.$closeAllLibraries()
 Calculate lPath2coreLib as con(tGitHandler.iPath2Core,sys(9),'core.lbs')

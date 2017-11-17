@@ -48,7 +48,7 @@
 		"subwindowstyle": false,
 		"text": {
 			"type": 0,
-			"calc": "Nur Warnings"
+			"calc": "Warnings (x)"
 		},
 		"textcolor": "kColorDefault",
 		"tooltip": "",
