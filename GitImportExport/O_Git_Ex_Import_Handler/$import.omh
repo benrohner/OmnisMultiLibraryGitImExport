@@ -41,13 +41,13 @@ For l1 from 1 to lListMaster.$linecount step 1
 		If FileOps.$doesfileexist(lTmpLibPath)
 			Close library {[lImportLibName]}
 			Do FileOps.$deletefile(lLibPath) Returns lFileOpsError
-			If lFileOpsError=kFileOpsOK
+			If lFileOpsError=kFileOpsOK|lFileOpsError=kFileOpsFileNotFound     ;; kFileOpsFileNotFound-> im Fall einer neuen Libary existiert diese nicht schon vorher
 				Do FileOps.$movefile(lTmpLibPath,lLibPath) Returns lFileOpsError
 				If lFileOpsError=kFileOpsOK&FileOps.$doesfileexist(lLibPath)
 					Open library (Do not close others,Enable conversion by runtime,Do not open startup task) {[lLibPath]}
 				Else
 					;  Breakpoint {Importierte Library kann nich geöffnet werden}
-					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Fortfahren?}
+					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden, da da die bestehende .lbs Datei nicht gelöscht werden konnte. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
 					If flag false
 						Do lMasterErrors.$merge(lErrors)
 						Do lMasterWarnings.$merge(lWarnings)
@@ -57,7 +57,7 @@ For l1 from 1 to lListMaster.$linecount step 1
 			End If
 		End If
 	Else
-		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libaries fortfahren?}
+		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
 		If flag false
 			Do lMasterErrors.$merge(lErrors)
 			Do lMasterWarnings.$merge(lWarnings)
