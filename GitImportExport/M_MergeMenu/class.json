@@ -1,0 +1,49 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 72,
+	"designtaskname": "Startup_Task",
+	"nextident": 1013,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "iRecentApp",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iRecentApps",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2017-11-15 16:30:51",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2017-11-17 17:38:30",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "amétiq IDE"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

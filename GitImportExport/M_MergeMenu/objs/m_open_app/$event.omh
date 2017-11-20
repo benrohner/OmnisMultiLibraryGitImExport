@@ -1,0 +1,9 @@
+Do $cinst.$enableMenu(kFalse)
+Do method selectApp Returns lStatus
+If not(lStatus)
+	Quit method
+End If
+Do method addToRecentApps (tGitHandler.$getPathToMaster())
+
+Do tGitHandler.$openAllLibraries()
+Do $cinst.$enableMenu(kTrue)

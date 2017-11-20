@@ -1,0 +1,17 @@
+Do iRecentApps.$search($ref.[iRecentApp.$name]=pPath,kTrue,kFalse,kFalse,kFalse) Returns lLine
+If lLine>0
+	Do iRecentApps.$remove(lLine)
+Else If iRecentApps.$linecount>=l_max_enties
+	Do iRecentApps.$remove(l_max_enties)
+End If
+Do iRecentApps.$addbefore(1,pPath)
+
+Do iRecentApps.$search($ref.iRecentApp="",kTrue,kFalse,kTrue,kTrue)
+Do iRecentApps.$remove(kListDeleteSelected)
+
+For l1 from l_max_enties+1 to iRecentApps.$linecount step 1
+	Do iRecentApps.$remove(l1)
+End For
+
+Do method setRecentList
+Do method updateSubMenus

@@ -1,6 +1,15 @@
 Do lLibs.$define(lLibName,lLibPath)
 Do lLibs.$merge($libs.$makelist($ref.$name,$ref.$pathname))
 
+If pExportCore<>pExportPlugins
+	Do lLibs.$search($ref.[lLibName.$name]='core',kTrue,kFalse,kTrue,kTrue)
+	If pExportCore
+		Do lLibs.$remove(kListKeepSelected)
+	Else
+		Do lLibs.$remove(kListDeleteSelected)
+	End If
+End If
+
 Do lLibs.$search(pos(con(',',upp($ref.[lLibName.$name]),','),con(',',upp(C_EXCLUDE_LIBS),','))>0,kTrue,kFalse,kTrue,kTrue)
 Do lLibs.$remove(kListDeleteSelected)
 
@@ -9,16 +18,12 @@ Do $cinst.$defineErrorMaster(lMasterWarnings)
 
 For l1 from 1 to lLibs.$linecount step 1
 	Calculate lLibName as lLibs(lLibName.$name,l1)
-	If lLibName=$clib().$name
-		Jump to start of loop
-	End If
 	Calculate lLibPath as lLibs(lLibPath.$name,l1)
 	Calculate lGitPath as con(mid(lLibPath,1,rpos('.',lLibPath)-1),'.git')
 	Do FileOps.$doesfileexist(lGitPath) Returns lStatus
-	If lStatus
-		Do iUtils.$deleteDir(lGitPath)
+	If not(lStatus)
+		Do FileOps.$createdir(lGitPath) Returns lStatus
 	End If
-	Do FileOps.$createdir(lGitPath) Returns lStatus
 	Do $root.$exportjson($libs.[lLibName],lGitPath,lErrors,lWarnings) Returns lStatus
 	If not(lStatus)
 		Calculate lFailedLibs as con(lFailedLibs,lLibName,',')

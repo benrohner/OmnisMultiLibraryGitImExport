@@ -38,7 +38,7 @@
 		"iconid": 0,
 		"inactnorec": false,
 		"keyevents": false,
-		"left": 737,
+		"left": 482,
 		"mouseevents": false,
 		"nodropcursor": 0,
 		"nogray": false,
@@ -48,11 +48,11 @@
 		"subwindowstyle": false,
 		"text": {
 			"type": 0,
-			"calc": "Nur Warnings"
+			"calc": "Warnings (x)"
 		},
 		"textcolor": "kColorDefault",
 		"tooltip": "",
-		"top": 535,
+		"top": 600,
 		"userinfo": "",
 		"visible": true,
 		"width": 120

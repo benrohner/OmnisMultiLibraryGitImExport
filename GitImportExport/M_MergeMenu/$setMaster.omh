@@ -1,0 +1,14 @@
+If low(right(pPathToApp,4))<>".app"
+	OK message Kein gültiger Master ausgewählt {Das ausgewählte Verzeichnis [pPathToApp] ist kein gültiges Master Verzeichniss.}
+	Quit method kFalse
+End If
+Do tGitHandler.$init(pPathToApp) Returns lStatus
+If not(lStatus)
+	OK message Kein gültiger Master ausgewählt {Das ausgewählte Verzeichnis [pPathToApp] ist kein gültiges Master Verzeichniss.}
+	Quit method kFalse
+End If
+Do method setCurrentAppEntry (pPathToApp)
+
+Do $cinst.$enableMenu(kTrue)
+
+Quit method kTrue

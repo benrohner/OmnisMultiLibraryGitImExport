@@ -1,0 +1,4 @@
+Set reference lItemRef to $root.$imenus.SM_Recent_Open
+Do method buildRecentMenu (lItemRef)
+Set reference lItemRef to $root.$imenus.SM_Recent_Exec
+Do method buildRecentMenu (lItemRef)

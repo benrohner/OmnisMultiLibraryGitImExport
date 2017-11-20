@@ -7,7 +7,13 @@
 		"extension": false,
 		"ignoreexternal": false,
 		"nodebug": false,
-		"userinfo": "",
+		"userinfo": {
+			"type": 29,
+			"subtype": 0,
+			"data": {
+				"$base64": "ggEAIAAAAKgAAADgAAAAAwAAAAE7msoAAAAAAAAAAOCBAAAaAAAAZAAAAGQAAACIAAAAAABkAAAAAIIBACAAAAAgAAAASgAAAAMAAAABO5rKAAAAAAAAAABKAAAAAAEA4AIAI2QAFf//gQppUmVjZW50QXBwAAKBCmlSZWNlbnRBcHDgAAAAAQACAABJUkVDRU5UQVBQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEA4AIAMYErL0FwcGxpY2F0aW9ucy9hbWV0aXEgc2lNZWQgTUFTVEVSXzguMS4yLmFwcOA="
+			}
+		},
 		"vcsbuilddate": "",
 		"vcsbuildersname": "",
 		"vcsbuildnotes": ""

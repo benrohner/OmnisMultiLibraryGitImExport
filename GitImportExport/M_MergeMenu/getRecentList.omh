@@ -1,0 +1,5 @@
+Do iRecentApps.$define(iRecentApp)
+Calculate lTmpList as $clib.$userinfo
+If lTmpList.$linecount>0
+	Do iRecentApps.$merge(lTmpList)
+End If

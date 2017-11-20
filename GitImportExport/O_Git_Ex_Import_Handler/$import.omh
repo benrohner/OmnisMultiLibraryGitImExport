@@ -1,37 +1,53 @@
+If not(isclear($itasks.$findname('core')))
+	Do method stopApp ('core')
+	Do $cinst.$openAllLibraries()     ;; wenn nur der core laufen würde, sollte auch nur diese lib geöffnet sein
+End If
+If not(isclear($itasks.$findname('iMed')))
+	Do method stopApp ('iMed')
+End If
+
+If pImportCore
+	Do $cinst.$getAllGitFolders(iPath2Core) Returns lCoreLibs
+	Do lListMaster.$copydefinition(lCoreLibs)
+End If
+
+If pImportPlugins
+	Do $cinst.$getAllGitFolders(iPath2Plugins) Returns lPluginsList
+	Do lListMaster.$copydefinition(lPluginsList)
+End If
+Do lListMaster.$merge(lCoreLibs)
+Do lListMaster.$merge(lPluginsList)
+
 Yes/No message Backup der Libaries erstellen {Soll ein Backup des Verzeichnisses [iPath2Plugins] erstellt werden? Bei einem fehlerhaften Import kann es sonst zum Verlust deiner Änderungen kommen.}
 If flag true
 	Do $cinst.$checkBackupPlugins(iPath2Plugins)
 End If
 
-Do $cinst.$getRecursivFileList(iPath2Plugins,3) Returns lDirList
-Do lDirList.$search(pos('.git',$ref.name)=len($ref.name)-3&pos('.git',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)
-Do lDirList.$remove(kListKeepSelected)
-
 Do $cinst.$defineErrorMaster(lMasterErrors)
 Do $cinst.$defineErrorMaster(lMasterWarnings)
 
-For l1 from 1 to lDirList.$linecount step 1
-	Calculate lImportLibName as left(lDirList('name',l1),rpos('.git',lDirList('name',l1))-1)
+For l1 from 1 to lListMaster.$linecount step 1
+	Calculate lImportLibName as left(lListMaster('name',l1),rpos('.git',lListMaster('name',l1))-1)
 	If lImportLibName='GitImportExport'
 		Jump to start of loop
 	End If
 	
-	Calculate lTmpLibPath as replace(lDirList('fullname',l1),'.git','_new.lbs')
-	Calculate lLibPath as replace(lDirList('fullname',l1),'.git','.lbs')
+	Calculate lTmpLibPath as replace(lListMaster('fullname',l1),'.git','_new.lbs')
+	Calculate lLibPath as replace(lListMaster('fullname',l1),'.git','.lbs')
 	
 	Do FileOps.$deletefile(lTmpLibPath)
-	Do $root.$importjson(lDirList('fullname',l1),lTmpLibPath,lErrors,lWarnings) Returns lStatus
+	Do $root.$importjson(lListMaster('fullname',l1),lTmpLibPath,lErrors,lWarnings) Returns lStatus
 	If lErrors.$linecount<1&lStatus
 		If FileOps.$doesfileexist(lTmpLibPath)
 			Close library {[lImportLibName]}
 			Do FileOps.$deletefile(lLibPath) Returns lFileOpsError
-			If lFileOpsError=kFileOpsOK
+			If lFileOpsError=kFileOpsOK|lFileOpsError=kFileOpsFileNotFound     ;; kFileOpsFileNotFound-> im Fall einer neuen Libary existiert diese nicht schon vorher
 				Do FileOps.$movefile(lTmpLibPath,lLibPath) Returns lFileOpsError
 				If lFileOpsError=kFileOpsOK&FileOps.$doesfileexist(lLibPath)
 					Open library (Do not close others,Enable conversion by runtime,Do not open startup task) {[lLibPath]}
 				Else
 					;  Breakpoint {Importierte Library kann nich geöffnet werden}
-					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Fortfahren?}
+					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden, da da die bestehende .lbs Datei nicht gelöscht werden konnte. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
 					If flag false
 						Do lMasterErrors.$merge(lErrors)
 						Do lMasterWarnings.$merge(lWarnings)
@@ -41,7 +57,7 @@ For l1 from 1 to lDirList.$linecount step 1
 			End If
 		End If
 	Else
-		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libaries fortfahren?}
+		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
 		If flag false
 			Do lMasterErrors.$merge(lErrors)
 			Do lMasterWarnings.$merge(lWarnings)

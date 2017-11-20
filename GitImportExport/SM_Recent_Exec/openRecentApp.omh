@@ -1,0 +1,6 @@
+If $imenus.M_MergeMenu.$cando
+	Do $imenus.M_MergeMenu.$setMaster(pPath) Returns lStatus
+	Do tGitHandler.$closeAllLibraries()
+	Calculate lPath2coreLib as con(tGitHandler.iPath2Core,sys(9),'core.lbs')
+	Open library (Do not close others,Enable conversion by runtime,Convert without user prompts) {[lPath2coreLib]}
+End If

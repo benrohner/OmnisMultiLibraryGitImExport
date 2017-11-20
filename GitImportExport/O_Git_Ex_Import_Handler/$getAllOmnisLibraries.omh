@@ -1,9 +1,10 @@
-If isclear(iPath2Plugins)
+If isclear(pPath)
 	Quit method lList
 End If
 
-Calculate lListMaster as $cinst.$getRecursivFileList(iPath2Plugins)
+Do $cinst.$getRecursivFileList(pPath) Returns lListMaster
 Do lListMaster.$search(pos('.lbs',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)
 Do lListMaster.$remove(kListKeepSelected)
+Do lListMaster.$sort($ref.fullname)
 
 Quit method lListMaster

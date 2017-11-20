@@ -1,0 +1,4 @@
+If $imenus.M_MergeMenu.$cando
+	Do $imenus.M_MergeMenu.$setMaster(pPath) Returns lStatus
+	Do tGitHandler.$openAllLibraries()
+End If

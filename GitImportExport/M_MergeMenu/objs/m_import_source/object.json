@@ -1,0 +1,25 @@
+{
+	"ident": 1011,
+	"order": 4,
+	"properties": {
+		"cascade": {
+			"type": 4,
+			"calc": "SM_Import"
+		},
+		"checked": false,
+		"enabled": false,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 0,
+		"macshortcutkey": "",
+		"text": {
+			"type": 0,
+			"calc": "Import sources from git"
+		},
+		"unixshortcutkey": "",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": ""
+	}
+}

@@ -3,5 +3,7 @@ If isclear(iPathMaster)
 	Quit method kFalse
 End If
 Calculate iPath2Plugins as con(pPathMaster,'/Contents/MacOS/firstruninstall/siMedPlugins')
+Calculate iPath2Core as con(pPathMaster,'/Contents/MacOS/firstruninstall/siMedCore')
+
 
 Quit method kTrue

@@ -1,0 +1,9 @@
+Do lListEntiers.$define(entry,lItemRef)
+Do lListEntiers.$merge($cinst.$objs.$makelist($ref.$text,$ref))
+Do lListEntiers.$search(pos(lPrefix,$ref.[entry.$name])>0,kTrue,kFalse,kTrue,kTrue)
+Do lListEntiers.$remove(kListKeepSelected)
+For l1 from 1 to lListEntiers.$linecount step 1
+	Do $cinst.$objs.$remove(lListEntiers(2,l1))
+End For
+Do $cinst.$objs.$add(con('Current App:',pPathToApp)) Returns lItemRef
+Do lItemRef.$enabled.$assign(kFalse)

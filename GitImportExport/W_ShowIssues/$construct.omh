@@ -5,3 +5,13 @@ Calculate iListWarnings as pListWarnings
 Do iListAllIssues.$define(iPathname,iErrorText,iErrorcode,iLineNo)
 Do iListAllIssues.$merge(iListErrors)
 Do iListAllIssues.$merge(iListWarnings)
+
+If iListErrors.$linecount=0
+	Do $cinst.$objs.filter_err_btn.$enabled.$assign(kFalse)
+End If
+If iListWarnings.$linecount=0
+	Do $cinst.$objs.filter_wrn_btn.$enabled.$assign(kFalse)
+End If
+
+Do $cinst.$objs.filter_err_btn.$text.$assign(con('Errors (',iListErrors.$linecount,')'))
+Do $cinst.$objs.filter_wrn_btn.$text.$assign(con('Warnings (',iListWarnings.$linecount,')'))

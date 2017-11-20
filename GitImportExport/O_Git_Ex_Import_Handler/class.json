@@ -1,6 +1,6 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 63,
+	"internalversion": 108,
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 		{
@@ -9,7 +9,7 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000,
-			"initval": "'COMPONENT LIBRARY,'",
+			"initval": "con('COMPONENT LIBRARY,',$clib().$name,',')",
 			"desc": "Kommasepariert"
 		}
 	],
@@ -21,6 +21,13 @@
 			"subtype": 0,
 			"sublen": 0,
 			"initval": "kTrue"
+		},
+		{
+			"name": "iPath2Core",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		},
 		{
 			"name": "iPath2Plugins",
@@ -35,6 +42,13 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
+		},
+		{
+			"name": "iRecentApps",
+			"order": 4,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
 		},
 		{
 			"name": "iUtils",
@@ -54,7 +68,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2017-11-14 13:46:30",
+		"moddate": "2017-11-20 08:10:32",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",
