@@ -34,7 +34,9 @@ For l1 from 1 to lLibs.$linecount step 1
 End For
 
 If not(isclear(lFailedLibs))
-	OK message Fehler beim Exportieren (Icon,Sound bell) {Folgende Libraries konnten nixcht exportiert werden: [lFailedLibs]}
+	OK message Fehler beim Exportieren (Icon,Sound bell) {Folgende Libraries konnten nicht exportiert werden: [lFailedLibs]}
+Else
+	OK message Export erfolgreich (Icon,Sound bell) {Alle Änderungen wurden erfolgreich exportiert.}
 End If
 
 Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
