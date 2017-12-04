@@ -7,6 +7,7 @@ If isclear(tGitHandler.$getPathToMaster())
 End If
 
 Do method addToRecentApps (tGitHandler.$getPathToMaster())
+Do tGitHandler.$checkBaseVersion()
 
 Do tGitHandler.$closeAllLibraries()
 Calculate lPath2coreLib as con(tGitHandler.iPath2Core,sys(9),'core.lbs')

@@ -8,6 +8,7 @@ If not(lStatus)
 	Quit method kFalse
 End If
 Do method setCurrentAppEntry (pPathToApp)
+Do tGitHandler.$checkBaseVersion()
 
 Do $cinst.$enableMenu(kTrue)
 

@@ -1,8 +1,16 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 109,
+	"internalversion": 117,
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
+		{
+			"name": "C_BASE_VERSIN_FILE",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "'baseVersion'"
+		},
 		{
 			"name": "C_EXCLUDE_LIBS",
 			"order": 1,
@@ -11,6 +19,22 @@
 			"sublen": 100000000,
 			"initval": "con('COMPONENT LIBRARY,',$clib().$name,',')",
 			"desc": "Kommasepariert"
+		},
+		{
+			"name": "C_PROJECT_CORE",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "'siMedCore'"
+		},
+		{
+			"name": "C_PROJECT_PLUGINS",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "'siMedPlugins'"
 		}
 	],
 	"ivardefs": [
@@ -68,7 +92,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2017-11-28 13:52:34",
+		"moddate": "2017-12-04 10:20:14",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",
