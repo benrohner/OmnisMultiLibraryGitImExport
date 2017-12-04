@@ -68,4 +68,13 @@ For l1 from 1 to lListMaster.$linecount step 1
 	Do lMasterWarnings.$merge(lWarnings)
 End For
 
+If lMasterErrors.$linecount=0
+	If pImportCore
+		Do method writeBaseVersion (iPath2Core)
+	End If
+	If pImportPlugins
+		Do method writeBaseVersion (iPath2Plugins)
+	End If
+End If
+
 Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)

@@ -1,0 +1,10 @@
+Calculate lPathBaseVersionFile as con(pRootPath,sys(9),'.git',sys(9),C_BASE_VERSIN_FILE)
+Calculate lBaseVersion as ""
+If FileOps.$doesfileexist(lPathBaseVersionFile)
+	If iFile.$openfile(lPathBaseVersionFile)
+		If not(iFile.$readcharacter(kUniTypeUTF8,lBaseVersion))
+			Calculate  as ""
+		End If
+	End If
+End If
+Quit method lBaseVersion

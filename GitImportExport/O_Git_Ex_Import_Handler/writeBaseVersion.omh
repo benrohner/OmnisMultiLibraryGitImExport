@@ -1,0 +1,23 @@
+Calculate lPathBaseVersionFile as con(pRootPath,sys(9),'.git',sys(9),C_BASE_VERSIN_FILE)
+
+Calculate lStatus as kTrue
+If not(FileOps.$doesfileexist(lPathBaseVersionFile))
+	Do iFile.$createfile(lPathBaseVersionFile) Returns lStatus
+Else
+	Do iFile.$openfile(lPathBaseVersionFile) Returns lStatus
+End If
+
+If not(lStatus)
+	Breakpoint {Die Datei zur Speicherung der Base Version kann nicht geschrieben werden. Benni rufen.}
+	Quit method kFalse
+End If
+
+Calculate lBaseVersion as iUtils.$getGitVersion(pRootPath)
+
+Do iFile.$writecharacter(kUniTypeUTF8,lBaseVersion) Returns lStatus
+If not(lStatus)
+	Breakpoint {Die Datei zur Speicherung der Base Version kann nicht geschrieben werden. Benni rufen.}
+	Quit method kFalse
+End If
+
+Quit method kTrue
