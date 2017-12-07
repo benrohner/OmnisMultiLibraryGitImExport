@@ -1,11 +1,8 @@
 {
-	"ident": 1009,
-	"order": 2,
+	"ident": 1034,
+	"order": 1,
 	"properties": {
-		"cascade": {
-			"type": 4,
-			"calc": "SM_Recent_Open"
-		},
+		"cascade": "",
 		"checked": false,
 		"enabled": true,
 		"fontstyle": "kPlain",
@@ -15,7 +12,7 @@
 		"macshortcutkey": "",
 		"text": {
 			"type": 0,
-			"calc": "Start Application"
+			"calc": "Start ..."
 		},
 		"unixshortcutkey": "",
 		"userinfo": "",

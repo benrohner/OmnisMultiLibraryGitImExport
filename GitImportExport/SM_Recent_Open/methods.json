@@ -44,17 +44,5 @@
 				"sublen": 0
 			}
 		]
-	},
-	{
-		"name": "New Method",
-		"ident": 3,
-		"order": 5,
-		"pvardefs": [
-
-		],
-		"lvardefs": [
-
-		],
-		"empty": true
 	}
 ]

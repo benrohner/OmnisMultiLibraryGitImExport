@@ -1,0 +1,9 @@
+Breakpoint
+If $imenus.M_MergeMenu.$cando
+	Do $imenus.M_MergeMenu.$enableMenu(kFalse)
+	Do $imenus.M_MergeMenu.$selectApp(lPathMaster) Returns lStatus
+	If not(lStatus)
+		Quit method
+	End If
+	Do method openRecentApp (lPathMaster)
+End If

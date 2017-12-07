@@ -1,6 +1,6 @@
 Do method getRecentList
 Do pMenu.$objs.$makelist($ref) Returns lCurrentEntries
-For l1 from 1 to lCurrentEntries.$linecount step 1
+For l1 from 2 to lCurrentEntries.$linecount step 1
 	Do pMenu.$objs.$remove(lCurrentEntries(1,l1))
 End For
 
