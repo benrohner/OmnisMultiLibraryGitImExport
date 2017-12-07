@@ -4,7 +4,7 @@
 
 	],
 	"properties": {
-		"extension": true,
+		"extension": false,
 		"ignoreexternal": false,
 		"nodebug": false,
 		"userinfo": {
