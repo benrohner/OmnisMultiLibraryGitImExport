@@ -12,7 +12,7 @@ Do iUtils.$getGitVersion(lBasePath) Returns lCheckedOutVersion
 Do method readBaseVersionFile (lBasePath) Returns lImportedBaseVersion
 
 If isclear(lImportedBaseVersion)
-	OK message Base-Version unbekannt {Die Base-Version auf welcher der Import deines Projekts: [pProjectName] basiert konnte nicht gelesen werden. Um Konflikte zu vermeiden wird ein erneuter Import empfohlen.}
+	OK message Base-Version unbekannt {Die Base-Version auf welcher der Import deines Projekts: [pProjectName] basiert konnte nicht gelesen werden. Um Konflikte zu vermeiden wird ein erneuter Import empfholen.}
 Else If lCheckedOutVersion<>lImportedBaseVersion
-	OK message Base-Version nicht aktuell {Die Base-Version auf welcher der Import des Projekts: [pProjectName] basiert ist nicht aktuell. Um Konflikte zu vermeiden wird ein erneuter Import empfohlen.}
+	OK message Base-Version nicht aktuell {Die Base-Version auf welcher der Import des Projekts: [pProjectName] basiert ist nicht aktuell. Um Konflikte zu vermeiden wird ein erneuter Import empfholen.}
 End If
