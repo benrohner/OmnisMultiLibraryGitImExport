@@ -4,7 +4,7 @@
 	"properties": {
 		"cascade": {
 			"type": 4,
-			"calc": "SM_Recent_Open"
+			"calc": "SM_Recent_Exec"
 		},
 		"checked": false,
 		"enabled": true,
