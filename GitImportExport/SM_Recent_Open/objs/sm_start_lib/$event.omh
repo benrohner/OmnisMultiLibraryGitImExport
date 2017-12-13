@@ -1,4 +1,3 @@
-Breakpoint
 If $imenus.M_MergeMenu.$cando
 	Do $imenus.M_MergeMenu.$enableMenu(kFalse)
 	Do $imenus.M_MergeMenu.$selectApp(lPathMaster) Returns lStatus

@@ -4,14 +4,14 @@
 
 	],
 	"properties": {
-		"extension": true,
+		"extension": false,
 		"ignoreexternal": false,
 		"nodebug": false,
 		"userinfo": {
 			"type": 29,
 			"subtype": 0,
 			"data": {
-				"$base64": "ggEAIAAAAKgAAAERAAAAAwAAAAI7msoAAAAAAAAAARGBAAAaAAAAZAAAAGQAAACIAAAAAABkAAAAAIIBACAAAAAgAAAASgAAAAMAAAABO5rKAAAAAAAAAABKAAAAAAEA4AIAI2QAFf//gQppUmVjZW50QXBwAAKBCmlSZWNlbnRBcHDgAAAAAQACAABJUkVDRU5UQVBQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEA4AIAMYErQzpcVXNlcnNcV2luZG93c09ubHlcRG9jdW1lbnRzXHNpTWVkRGV2UHJvauACADGBKy9BcHBsaWNhdGlvbnMvYW1ldGlxIHNpTWVkIE1BU1RFUl84LjEuMi5hcHDg"
+				"$base64": ""
 			}
 		},
 		"vcsbuilddate": "",

@@ -26,6 +26,8 @@ End If
 Do $cinst.$defineErrorMaster(lMasterErrors)
 Do $cinst.$defineErrorMaster(lMasterWarnings)
 
+Do lListMaster.$sort(low($ref.name))     ;; Alphabetisch sortieren
+
 For l1 from 1 to lListMaster.$linecount step 1
 	Calculate lImportLibName as left(lListMaster('name',l1),rpos('.git',lListMaster('name',l1))-1)
 	If lImportLibName='GitImportExport'
