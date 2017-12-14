@@ -4,9 +4,23 @@
 		"ident": 1,
 		"order": 1,
 		"pvardefs": [
-
+			{
+				"name": "pPathMaster",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
 		],
 		"lvardefs": [
+			{
+				"name": "lPathFirstRunInst",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
 			{
 				"name": "lRecentApp",
 				"order": 1,

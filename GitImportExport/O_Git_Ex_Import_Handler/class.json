@@ -1,6 +1,6 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 126,
+	"internalversion": 131,
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 		{
@@ -78,7 +78,7 @@
 			"name": "iUtils",
 			"order": 5,
 			"type": "kObject",
-			"subtype": "GitImportExport.O_ExtCall_Osx",
+			"subtype": "O_ExtCall",
 			"sublen": 0
 		}
 	],
@@ -92,7 +92,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2017-12-13 15:46:34",
+		"moddate": "2017-12-14 17:48:34",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

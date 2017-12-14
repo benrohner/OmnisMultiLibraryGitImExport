@@ -1,8 +1,0 @@
-If not(FileOps.$doesfileexist(pFolderPath))
-	If $cinst.$createDir(FileOps.$parentdir(pFolderPath))
-		Do FileOps.$createdir(pFolderPath)
-		Quit method kTrue
-	End If
-Else
-	Quit method kTrue
-End If

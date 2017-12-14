@@ -1,0 +1,49 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 17,
+	"superclass": "O_ExtCall",
+	"designtaskname": "Startup_Task",
+	"cvardefs": [
+		{
+			"name": "C_WSH_EXIT_CODE_OK",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "C_WSH_STATUS_RUNNIG",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "0"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "iScriptShell",
+			"order": 1,
+			"type": "kObject",
+			"subtype": ".Automation Library.Automation\\WScript.Shell.1",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2017-12-14 11:20:11",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2017-12-14 17:47:45",
+		"selfcontained": false,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

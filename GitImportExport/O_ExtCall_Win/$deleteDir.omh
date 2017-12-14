@@ -1,0 +1,7 @@
+Calculate lScript as con('rd /s /q "',pPath,'"')
+If not($cinst.$runShellScript(lScript))
+	Breakpoint {Bitte Fehler behandeln}
+	Quit method kFalse
+End If
+
+Quit method kTrue

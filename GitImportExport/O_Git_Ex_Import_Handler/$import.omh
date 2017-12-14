@@ -18,11 +18,6 @@ End If
 Do lListMaster.$merge(lCoreLibs)
 Do lListMaster.$merge(lPluginsList)
 
-Yes/No message Backup der Libaries erstellen {Soll ein Backup des Verzeichnisses [iPath2Plugins] erstellt werden? Bei einem fehlerhaften Import kann es sonst zum Verlust deiner Änderungen kommen.}
-If flag true
-	Do $cinst.$checkBackupPlugins(iPath2Plugins)
-End If
-
 Do $cinst.$defineErrorMaster(lMasterErrors)
 Do $cinst.$defineErrorMaster(lMasterWarnings)
 
