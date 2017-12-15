@@ -1,8 +1,8 @@
 ;  Enter your initialization code here
 If sys(8)='MAC64'
-	Calculate iUtils as $libs.GITIMPORTEXPORT.$objects.O_ExtCall_Osx.$new()
+	Calculate iUtils as $libs.GitImportExport.$objects.O_ExtCall_Osx.$new()
 Else If sys(8)='WIN32'|sys(8)='WIN64'
-	Calculate iUtils as $libs.GITIMPORTEXPORT.$objects.O_ExtCall_Win.$new()
+	Calculate iUtils as $libs.GitImportExport.$objects.O_ExtCall_Win.$new()
 Else
 	Quit method kFalse
 End If
