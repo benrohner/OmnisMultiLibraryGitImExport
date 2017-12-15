@@ -1,13 +1,10 @@
 {
-	"ident": 1011,
-	"order": 4,
+	"ident": 1034,
+	"order": 1,
 	"properties": {
-		"cascade": {
-			"type": 4,
-			"calc": "SM_Export"
-		},
+		"cascade": "",
 		"checked": false,
-		"enabled": false,
+		"enabled": true,
 		"fontstyle": "kPlain",
 		"helpfile": 0,
 		"helptext": "",
@@ -15,7 +12,7 @@
 		"macshortcutkey": "",
 		"text": {
 			"type": 0,
-			"calc": "Export sources to git"
+			"calc": "Start ..."
 		},
 		"unixshortcutkey": "",
 		"userinfo": "",

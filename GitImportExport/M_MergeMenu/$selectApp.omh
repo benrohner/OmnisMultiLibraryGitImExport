@@ -1,0 +1,7 @@
+Do FileOps.$selectdirectory(pPathMaster,'siMed APP auswählen (Branch)','',kFileOpsOpenApps) Returns lStatus
+If not(lStatus)
+	OK message Kein gültiges Verzeichnis ausgewählt {Das ausgewählte Verzeichnis [pPathMaster] ist ungültig.}
+	Quit method kFalse
+End If
+Quit method kTrue
+;  Quit method $cinst.$setMaster(pPathMaster)

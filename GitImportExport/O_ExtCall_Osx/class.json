@@ -1,7 +1,7 @@
 {
 	"classtype": "kObjectclass",
-	"internalversion": 19,
-	"superclass": "O_ExtCall_Intf",
+	"internalversion": 23,
+	"superclass": "O_ExtCall",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
@@ -19,7 +19,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2017-11-14 12:17:02",
+		"moddate": "2017-12-14 17:46:07",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

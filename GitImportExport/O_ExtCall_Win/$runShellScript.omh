@@ -1,0 +1,21 @@
+Do iScriptShell.$createobject()
+Do iScriptShell.$exec(pShellScript) Returns lObject
+Repeat
+	Do sleep(100)
+Until lObject.$status>C_WSH_STATUS_RUNNIG     ;; Warte bis Command abgearbeitet ist
+
+If lObject.$exitcode=C_WSH_EXIT_CODE_OK     ;; War Erfolgreich
+	Calculate lStdOut as lObject.$stdout
+	Calculate lResult as lStdOut.$readall()
+	Calculate pResult as lResult
+	Quit method kTrue
+End If
+
+;  Fehlerfall
+Calculate lStdErr as lObject.$stderr
+Calculate lErrorTxt as lStdErr.$readall()
+Calculate pError as lErrorTxt
+If isclear(lErrorTxt)
+	Calculate pError as "Unbekannter Shell Error"
+End If
+Quit method kFalse
