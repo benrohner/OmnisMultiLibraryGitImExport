@@ -4,4 +4,6 @@ If pMasterErrors.$linecount>0|pMasterWarnings.$linecount>0     ;; Wenn keine Iss
 		Close window instance W_ShowIssues
 	End If
 	Open window instance W_ShowIssues (pMasterErrors,pMasterWarnings)
+Else
+	OK message Import erfolgreich (Icon,Sound bell) {Alle Sourcen wurden erfolgreich importiert.}
 End If

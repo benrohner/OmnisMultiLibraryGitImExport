@@ -1,6 +1,6 @@
 {
 	"classtype": "kMenu",
-	"internalversion": 7,
+	"internalversion": 8,
 	"designtaskname": "Startup_Task",
 	"nextident": 1012,
 	"cvardefs": [
@@ -23,7 +23,7 @@
 		"helptext": "",
 		"inheritedorder": 0,
 		"issupercomponent": false,
-		"moddate": "2017-11-17 14:31:25",
+		"moddate": "2018-01-02 16:57:49",
 		"showascheckedout": false,
 		"title": "",
 		"userinfo": "",
