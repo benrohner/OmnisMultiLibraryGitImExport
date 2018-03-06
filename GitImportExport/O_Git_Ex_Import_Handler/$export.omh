@@ -35,8 +35,7 @@ End For
 
 If not(isclear(lFailedLibs))
 	OK message Fehler beim Exportieren (Icon,Sound bell) {Folgende Libraries konnten nicht exportiert werden: [lFailedLibs]}
+	Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
 Else
 	OK message Export erfolgreich (Icon,Sound bell) {Alle Änderungen wurden erfolgreich exportiert.}
 End If
-
-Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
