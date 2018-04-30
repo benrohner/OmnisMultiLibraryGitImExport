@@ -15,40 +15,11 @@
 		],
 		"lvardefs": [
 			{
-				"name": "lClassName",
-				"order": 8,
+				"name": "lError",
+				"order": 3,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
-			},
-			{
-				"name": "lGitExt",
-				"order": 5,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 5,
-				"initval": "'.git'"
-			},
-			{
-				"name": "lItemRef",
-				"order": 9,
-				"type": "kItemref",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "lLibName",
-				"order": 7,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lLine",
-				"order": 6,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
 			},
 			{
 				"name": "lPath",
@@ -56,20 +27,6 @@
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
-			},
-			{
-				"name": "lTmpString",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lTokenizedPath",
-				"order": 4,
-				"type": "kList",
-				"subtype": "",
-				"sublen": 0
 			}
 		]
 	}
