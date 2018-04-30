@@ -11,4 +11,7 @@ On evDoubleClick     ;; Event Parameters - pRow ( Itemreference )
 		Quit method
 	End If
 	
-	Do  Returns $cinst.$showClassInEditor(lPath)
+	Do tGitHandler.iUtils.$openInEditor(lPath) Returns lError
+	If not(isclear(lError))
+		OK message Fehler beim öffnen im Externen Editor {Die Datei [lPath] konnte nicht im externen Editor geöffnet werden.[kCr][kCr]Fehler: [lError]}
+	End If

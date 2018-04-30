@@ -159,5 +159,23 @@
 
 		],
 		"empty": true
+	},
+	{
+		"name": "$openInEditor",
+		"ident": 7,
+		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pPathToFile",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

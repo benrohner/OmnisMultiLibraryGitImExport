@@ -1,0 +1,3 @@
+Calculate lScript as con('open ',lDq,pPathToFile,lDq)
+Do $cinst.$runShellScript(lScript,lResult,lErrror)
+Quit method lErrror
