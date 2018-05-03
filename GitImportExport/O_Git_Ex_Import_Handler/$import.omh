@@ -1,3 +1,8 @@
+No/Yes message Import {Beim Import gehen alle bisher nicht exportierten Änderungen verloren! [kCr][kCr]Soll der Import nun wirklich gestartet werden?}
+If flag false
+	Quit method
+End If
+
 If not(isclear($itasks.$findname('core')))
 	Do method stopApp ('core')
 	Do $cinst.$openAllLibraries()     ;; wenn nur der core laufen würde, sollte auch nur diese lib geöffnet sein
