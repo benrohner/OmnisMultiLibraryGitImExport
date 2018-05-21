@@ -1,9 +1,9 @@
-If pMasterErrors.$linecount>0|pMasterWarnings.$linecount>0     ;; Wenn keine Issues vorhanden sind muss nix angezeigt werden
+If pMasterErrors.$linecount>0|pMasterWarnings.$linecount>0     ;; If there are no issues, nothing has to be displayed
 	Test for window open {W_ShowIssues}
 	If flag true
 		Close window instance W_ShowIssues
 	End If
 	Open window instance W_ShowIssues (pMasterErrors,pMasterWarnings)
 Else
-	OK message Import erfolgreich (Icon,Sound bell) {Alle Sourcen wurden erfolgreich importiert.}
+	OK message Import successful (Icon,Sound bell) {All sources were imported successfully.}
 End If

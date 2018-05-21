@@ -5,7 +5,7 @@ If pDirLevel>pMaxDirLevel
 	Quit method lList3
 End If
 
-For n from 1 to lList.$linecount step 1     ;; Subdirectories auflisten
+For n from 1 to lList.$linecount step 1     ;; List subdirectories
 	If pos('.git',lList(1,n))=len(lList(1,n))-3
 		Jump to start of loop
 	End If

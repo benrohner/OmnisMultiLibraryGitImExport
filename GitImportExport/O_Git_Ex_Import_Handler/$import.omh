@@ -1,4 +1,4 @@
-No/Yes message Import {Beim Import gehen alle bisher nicht exportierten Änderungen verloren! [kCr][kCr]Soll der Import nun wirklich gestartet werden?}
+No/Yes message Import {All changes that have not yet been exported are lost during the import! [kCr][kCr]Do you want to continue with the import?}
 If flag false
 	Quit method
 End If
@@ -10,7 +10,6 @@ End If
 If not(isclear($itasks.$findname('iMed')))
 	Do method stopApp ('iMed')
 End If
-
 If pImportCore
 	Do $cinst.$getAllGitFolders(iPath2Core) Returns lCoreLibs
 	Do lListMaster.$copydefinition(lCoreLibs)
@@ -30,7 +29,7 @@ Do lListMaster.$sort(low($ref.name))     ;; Alphabetisch sortieren
 
 For l1 from 1 to lListMaster.$linecount step 1
 	Calculate lImportLibName as left(lListMaster('name',l1),rpos('.git',lListMaster('name',l1))-1)
-	If lImportLibName='GitImportExport'
+	If lImportLibName=$clib.$name
 		Jump to start of loop
 	End If
 	
@@ -43,13 +42,12 @@ For l1 from 1 to lListMaster.$linecount step 1
 		If FileOps.$doesfileexist(lTmpLibPath)
 			Close library {[lImportLibName]}
 			Do FileOps.$deletefile(lLibPath) Returns lFileOpsError
-			If lFileOpsError=kFileOpsOK|lFileOpsError=kFileOpsFileNotFound     ;; kFileOpsFileNotFound-> im Fall einer neuen Libary existiert diese nicht schon vorher
+			If lFileOpsError=kFileOpsOK|lFileOpsError=kFileOpsFileNotFound     ;; kFileOpsFileNotFound-> in case of a new library, the library doesnt exist yet
 				Do FileOps.$movefile(lTmpLibPath,lLibPath) Returns lFileOpsError
 				If lFileOpsError=kFileOpsOK&FileOps.$doesfileexist(lLibPath)
 					Open library (Do not close others,Enable conversion by runtime,Do not open startup task) {[lLibPath]}
 				Else
-					;  Breakpoint {Importierte Library kann nich geöffnet werden}
-					No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden, da da die bestehende .lbs Datei nicht gelöscht werden konnte. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
+					No/Yes message Library could not be imported {Library [lImportLibName] could not be imported because the existing .lbs filed could not be removed. Do you still want to continue importing more libraries?}
 					If flag false
 						Do lMasterErrors.$merge(lErrors)
 						Do lMasterWarnings.$merge(lWarnings)
@@ -59,7 +57,7 @@ For l1 from 1 to lListMaster.$linecount step 1
 			End If
 		End If
 	Else
-		No/Yes message Libary konnte nicht importiert werden {Die Libary [lImportLibName] konnte nicht importiert werden. Bitte die Fehlerliste ansehen. Möchtest du trotzdem mit dem Import weiterer Libraries fortfahren?}
+		No/Yes message Library could not be imported {Library [lImportLibName]  could not be imported. Please have a look to the list of errors. Do you still want to continue importing more libraries?}
 		If flag false
 			Do lMasterErrors.$merge(lErrors)
 			Do lMasterWarnings.$merge(lWarnings)
