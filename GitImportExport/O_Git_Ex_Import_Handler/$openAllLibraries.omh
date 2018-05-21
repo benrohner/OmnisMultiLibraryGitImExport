@@ -1,9 +1,8 @@
 Do $cinst.$closeAllLibraries()
 
-Do $cinst.$getAllOmnisLibraries(iPath2Core) Returns lListMaster
-Do lListMaster.$merge($cinst.$getAllOmnisLibraries(iPath2Plugins))
+Do $cinst.$getAllOmnisLibraries(iPath2LibsDir) Returns lListMaster
 
-Do lListMaster.$sort(low($ref.name))     ;; Alphabetisch sortieren
+Do lListMaster.$sort(low($ref.name))     ;; Sort in alphabetical order
 
 For n from 1 to lListMaster.$linecount step 1
 	If pos('.lbr',lListMaster(1,n))>0|pos('.lbs',lListMaster(1,n))>0

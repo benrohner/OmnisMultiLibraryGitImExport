@@ -96,24 +96,7 @@
 		"ident": 3,
 		"order": 5,
 		"pvardefs": [
-			{
-				"name": "pImportCore",
-				"order": 6,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 1,
-				"initval": "kFalse"
-			},
-			{
-				"name": "pImportPlugins",
-				"order": 7,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 2,
-				"initval": "kFalse"
-			}
+
 		],
 		"lvardefs": [
 			{
@@ -159,6 +142,13 @@
 				"sublen": 100000000
 			},
 			{
+				"name": "lLibrariesList",
+				"order": 12,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
 				"name": "lListMaster",
 				"order": 9,
 				"type": "kList",
@@ -175,13 +165,6 @@
 			{
 				"name": "lMasterWarnings",
 				"order": 3,
-				"type": "kList",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "lPluginsList",
-				"order": 12,
 				"type": "kList",
 				"subtype": "",
 				"sublen": 0
@@ -214,24 +197,7 @@
 		"ident": 0,
 		"order": 6,
 		"pvardefs": [
-			{
-				"name": "pExportCore",
-				"order": 12,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 1,
-				"initval": "kFalse"
-			},
-			{
-				"name": "pExportPlugins",
-				"order": 13,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 2,
-				"initval": "kFalse"
-			}
+
 		],
 		"lvardefs": [
 			{
@@ -666,111 +632,6 @@
 		]
 	},
 	{
-		"name": "$checkBackupPlugins",
-		"ident": 13,
-		"order": 16,
-		"pvardefs": [
-			{
-				"name": "pPath",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 1
-			}
-		],
-		"lvardefs": [
-			{
-				"name": "lDoBackup",
-				"order": 9,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0
-			},
-			{
-				"name": "lPathToDev",
-				"order": 8,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lStatus",
-				"order": 7,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0
-			},
-			{
-				"name": "lUserHome",
-				"order": 4,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			}
-		]
-	},
-	{
-		"name": "$doBackupPlugins",
-		"ident": 15,
-		"order": 17,
-		"pvardefs": [
-			{
-				"name": "pPathToDev",
-				"order": 6,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 1
-			},
-			{
-				"name": "pPath",
-				"order": 7,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 2
-			}
-		],
-		"lvardefs": [
-			{
-				"name": "lCommitHash",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lFileInfo",
-				"order": 4,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "lPathToArchive",
-				"order": 2,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lScript",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lStatus",
-				"order": 5,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0
-			}
-		]
-	},
-	{
 		"name": "$getLastCommitHashFromGit",
 		"ident": 14,
 		"order": 18,
@@ -809,6 +670,7 @@
 		"name": "checkBaseVersionForBranch",
 		"ident": 18,
 		"order": 20,
+		"notes": "Check if the checked out version from git is equal to the imported version",
 		"pvardefs": [
 			{
 				"name": "pProjectName",

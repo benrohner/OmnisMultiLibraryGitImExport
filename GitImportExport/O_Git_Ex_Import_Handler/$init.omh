@@ -4,13 +4,10 @@ If isclear(iPathMaster)
 End If
 
 If sys(8)='MAC64'
-	Calculate lPathFirstRunInst as con(sys(9),'Contents',sys(9),'MacOS',sys(9),'firstruninstall',sys(9))
-	Calculate iPath2Plugins as con(pPathMaster,lPathFirstRunInst,'siMedPlugins')
-	Calculate iPath2Core as con(pPathMaster,lPathFirstRunInst,'siMedCore')
+	Calculate iPath2LibsDir as con(pPathMaster,sys(9),'Contents',sys(9),'MacOS',sys(9),'firstruninstall')
 Else If sys(8)='WIN32'|sys(8)='WIN64'
-	Calculate iPath2Plugins as con(pPathMaster,sys(9),'siMedPlugins')
-	Calculate iPath2Core as con(pPathMaster,sys(9),'siMedCore')
+	Calculate iPath2LibsDir as pPathMaster
 Else
 	Quit method kFalse
 End If
-Quit method kTrue
+Quit method FileOps.$doesfileexist(iPath2LibsDir)

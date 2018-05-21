@@ -1,18 +1,10 @@
-;  Prüfe ob die ausgecheckte Version mit der Importierten Version Übereinstimmt
-If pProjectName=C_PROJECT_CORE
-	Calculate lBasePath as iPath2Core
-Else If pProjectName=C_PROJECT_PLUGINS
-	Calculate lBasePath as iPath2Plugins
-Else
-	Breakpoint {Unbekannrtes Projekt}
-	Quit method
-End If
+;  Check if the checked out version from git is equal to the imported version
 
-Do iUtils.$getGitVersion(lBasePath) Returns lCheckedOutVersion
-Do method readBaseVersionFile (lBasePath) Returns lImportedBaseVersion
+Do iUtils.$getGitVersion(iPath2LibsDir) Returns lCheckedOutVersion
+Do method readBaseVersionFile (iPath2LibsDir) Returns lImportedBaseVersion
 
 If isclear(lImportedBaseVersion)
-	OK message Base-Version unbekannt {Die Base-Version auf welcher der Import deines Projekts: [pProjectName] basiert konnte nicht gelesen werden. Um Konflikte zu vermeiden wird ein erneuter Import empfholen.}
+	OK message Unkown base version {The base version on which your project is based on couldn't be read. To avoid conflicts a re-import is recommended.}
 Else If lCheckedOutVersion<>lImportedBaseVersion
-	OK message Base-Version nicht aktuell {Die Base-Version auf welcher der Import des Projekts: [pProjectName] basiert ist nicht aktuell. Um Konflikte zu vermeiden wird ein erneuter Import empfholen.}
+	OK message Base version outdated {The base version on which your project is based on is not up to date. To avoid conflicts an import is recommended.}
 End If

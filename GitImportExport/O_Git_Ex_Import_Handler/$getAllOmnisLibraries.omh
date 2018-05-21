@@ -3,7 +3,7 @@ If isclear(pPath)
 End If
 
 Do $cinst.$getRecursivFileList(pPath) Returns lListMaster
-Do lListMaster.$search(pos('.lbs',$ref.name)>1,kTrue,kFalse,kTrue,kTrue)
+Do lListMaster.$search(pos('.lbs',$ref.name)>1&pos('startup',$ref.fullname)=0,kTrue,kFalse,kTrue,kTrue)
 Do lListMaster.$remove(kListKeepSelected)
 Do lListMaster.$sort($ref.fullname)
 

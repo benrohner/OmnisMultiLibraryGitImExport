@@ -2,10 +2,7 @@
 	"ident": 1010,
 	"order": 3,
 	"properties": {
-		"cascade": {
-			"type": 4,
-			"calc": "SM_Import"
-		},
+		"cascade": "",
 		"checked": false,
 		"enabled": false,
 		"fontstyle": "kPlain",

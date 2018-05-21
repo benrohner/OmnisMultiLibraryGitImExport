@@ -1,5 +1,5 @@
 Do lTokenizedString.$define(lSubString)
-Do trim(pString,kTrue,kFalse,pDelimiter) Returns lSource     ;; Leading / entfernen damit das zerlegen des Strings nachfolgend funktioniert
+Do trim(pString,kTrue,kFalse,pDelimiter) Returns lSource     ;; Remove leading / so that the disassembly of the string works as follows
 Do strtok(lSource.$name,(sys(9))) Returns lSubString
 While not(isclear(lSubString))
 	Do lTokenizedString.$add(lSubString)
