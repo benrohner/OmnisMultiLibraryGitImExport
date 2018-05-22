@@ -28,14 +28,13 @@ For l1 from 1 to lLibs.$linecount step 1
 	If not(lStatus)
 		Calculate lFailedLibs as con(lFailedLibs,lLibName,',')
 	End If
-	
 	Do lMasterErrors.$merge($cinst.$mergeExporetIssues(lErrors))
 	Do lMasterWarnings.$merge($cinst.$mergeExporetIssues(lWarnings))
 End For
 
 If not(isclear(lFailedLibs))
-	OK message Fehler beim Exportieren (Icon,Sound bell) {Folgende Libraries konnten nicht exportiert werden: [lFailedLibs]}
+	OK message Error during export (Icon,Sound bell) {The following libraries could not be exported: [lFailedLibs]}
 	Do $cinst.$showIssuesOverview(lMasterErrors,lMasterWarnings)
 Else
-	OK message Export erfolgreich (Icon,Sound bell) {Alle Änderungen wurden erfolgreich exportiert.}
+	OK message Export successful (Icon,Sound bell) {All changes were exported successfully.}
 End If
