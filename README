@@ -5,11 +5,11 @@ Here we published the Omnis import/export library which we use at amétiq to ope
 
 ## Getting Started
 
-1.) Import GitImportExport.lbs from this sources via "New Lib from JSON" in Omnis Studio.
-2.) Open StartupTask of GitImportExport.
-3.) In the new Menu popping up select "Open Application" and select a Omnis Application you want to work with. For OSX you can just select you app from application folder, the GitImportExport will resolve the path to the firstruninstall folder. On Windows you have to select the root directory of your libraries.
-4.) Now you can select the export oprion from the menu.
-5.) The import work vise versa.
+1. Import GitImportExport.lbs from this sources via "New Lib from JSON" in Omnis Studio.
+1. Open StartupTask of GitImportExport.
+1. In the new Menu popping up select "Open Application" and select a Omnis Application you want to work with. For OSX you can just select you app from application folder, the GitImportExport will resolve the path to the firstruninstall folder. On Windows you have to select the root directory of your libraries.
+1. Now you can select the export oprion from the menu.
+1. The import work vise versa.
 
 
 ### Prerequisites
